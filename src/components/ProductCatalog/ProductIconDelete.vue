@@ -1,5 +1,7 @@
 <template>
-  <img :src="icon" class="ProductIconDelete" @click="deleteFromProducts()" />
+  <button class="ProductDelete" @click="deleteFromProducts()">
+    <span class="ProductIconDelete"></span>
+  </button>
 </template>
 
 <script>
@@ -9,11 +11,6 @@ export default {
   name: "ProductIconDelete",
   props: {
     id: Number
-  },
-  data() {
-    return {
-      icon: "./assets/icon/deleteIcon.svg"
-    };
   },
   methods: {
     ...mapActions(["DELETE_FROM_PRODUCTS"]),
@@ -26,6 +23,12 @@ export default {
 
 <style scoped>
 .ProductIconDelete {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: url("../../assets/icon/deleteIcon.svg") center no-repeat;
+}
+.ProductDelete {
   position: absolute;
   right: -7px;
   top: -7px;
@@ -34,6 +37,11 @@ export default {
   background: #ff8484;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  padding: 0;
+  --webkit-appereance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
   display: none;
 }
 </style>
