@@ -12,7 +12,7 @@ export default {
   },
   data() {
     return {
-      icon: "../assets/icon/deleteIcon.svg"
+      icon: "./assets/icon/deleteIcon.svg"
     };
   },
   methods: {
