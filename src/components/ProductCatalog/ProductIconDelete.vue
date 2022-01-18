@@ -1,9 +1,5 @@
 <template>
-  <img
-    src="../../assets/icon/deleteIcon.svg"
-    class="ProductIconDelete"
-    @click="deleteFromProducts()"
-  />
+  <img :src="icon" class="ProductIconDelete" @click="deleteFromProducts()" />
 </template>
 
 <script>
@@ -13,6 +9,11 @@ export default {
   name: "ProductIconDelete",
   props: {
     id: Number
+  },
+  data() {
+    return {
+      icon: "../../assets/icon/deleteIcon.svg"
+    };
   },
   methods: {
     ...mapActions(["DELETE_FROM_PRODUCTS"]),
